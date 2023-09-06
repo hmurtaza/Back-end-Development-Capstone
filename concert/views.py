@@ -71,7 +71,7 @@ def logout_view(request):
 def concerts(request):
     if request.user.is_authenticated:
         lst_of_concert = []
-        concert_objects = Concert.object.all()
+        concert_objects = Concert.objects.all()
         for item in concert_objects:
             try:
                 status = item.attendee.filter(
