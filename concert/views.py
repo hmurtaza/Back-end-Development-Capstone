@@ -58,7 +58,7 @@ def login_view(request):
         password = request.POST.get('password')
         try:
             user = User.objects.get(username=username)
-            if user.check_passwork(password):
+            if user.check_password(password):
                 login(request, user)
                 return HttpResponseRedirect(reverse("index"))
         except User.DoesNotExist:
